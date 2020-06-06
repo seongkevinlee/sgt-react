@@ -10,6 +10,21 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.getAllGrades();
+  }
+
+  getAllGrades() {
+    fetch('/api/grades')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          grades: data
+        });
+      })
+      .catch(err => console.error(err));
+  }
+
   render() {
     return (
       <Header/>
