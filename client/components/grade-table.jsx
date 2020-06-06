@@ -8,30 +8,21 @@ export default class GradeTable extends React.Component {
     this.state = {
       empty: false
     };
-    this.renderGrades = this.renderGrades.bind(this);
+    this.renderGradeRows = this.renderGradeRows.bind(this);
   }
 
-  renderGrades(props) {
+  renderGradeRows(props) {
     const grades = this.props.grades;
-    console.log('renderGrades grades:', grades);
-    const gradeRow = grades.map(grade => {
-      return <Grade key={grade.id} grades={grade}/>;
-      // return {
-      //   id: grade.id,
-      //   name: grade.name,
-      //   course: grade.course,
-      //   grade: grade.grade
-      // };
+    const gradeRows = grades.map(grade => {
+      return <Grade key={grade.id} grade={grade}/>;
     });
-    console.log('gradeRow:', gradeRow);
+    return gradeRows;
   }
 
   render() {
-    const grades = this.props.grades;
-    console.log('render grades:', grades);
     return (
       <div className='container col-12'>
-        <table className='table table-dark'>
+        <table className='table table-striped'>
           <thead className='thead-dark'>
             <tr>
               <th>Student Name</th>
@@ -40,8 +31,7 @@ export default class GradeTable extends React.Component {
             </tr>
           </thead>
           <tbody>
-            <Grade key={grades.id} grades={grades[0]}/>
-            {/* {this.renderGrades()} */}
+            {this.renderGradeRows()}
           </tbody>
         </table>
       </div>
