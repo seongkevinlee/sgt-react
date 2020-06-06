@@ -9,7 +9,7 @@ function Header(props) {
       </div>
       <div>
         <h4>Average Grade:&nbsp;
-          <span className='badge badge-danger'>
+          <span className='badge badge-info'>
             {!averageGrade ? '##' : averageGrade}
           </span>
         </h4>

@@ -36,7 +36,23 @@ class App extends React.Component {
     }, 0);
     const gradesAverage = Math.floor(gradesTotal / allGradesArray.length);
     return gradesAverage;
+  }
 
+  addNewGrade(newGrade) {
+    fetch('/api/grades', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newGrade)
+    })
+      .then(response => response.json())
+      .then(grade => {
+        this.setState({
+          grades: this.state.grades.concat(grade)
+        });
+      })
+      .catch(err => console.error(err));
   }
 
   render() {
