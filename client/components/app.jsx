@@ -23,9 +23,17 @@ class App extends React.Component {
         this.setState({
           grades: data
         });
-        console.log('this.state.grades:', this.state.grades);
       })
       .catch(err => console.error(err));
+  }
+
+  getAverageGrade() {
+    const allGrades = this.state.grades;
+    const allGradesArray = [];
+    allGrades.forEach(gradeNum => allGradesArray.push(gradeNum.grade));
+    const gradesTotal = allGradesArray.reduce((a, b) => a + b);
+    const gradesAverage = Math.floor(gradesTotal / allGradesArray.length);
+    return gradesAverage;
   }
 
   render() {
