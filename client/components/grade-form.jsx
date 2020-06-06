@@ -25,6 +25,11 @@ export default class GradeForm extends React.Component {
 
   }
 
+  handleSubmit() {
+    event.preventDefault();
+
+  }
+
   render() {
     return (
       <div className='container col-6'>
