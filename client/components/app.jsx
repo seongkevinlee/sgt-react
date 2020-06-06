@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 import React from 'react';
 import Header from './header';
 import GradeTable from './grade-table';
@@ -32,14 +30,11 @@ class App extends React.Component {
     const allGradesArray = [];
     allGrades.forEach(gradeRow => {
       allGradesArray.push(gradeRow.grade);
-      console.log('allGradesArray1:', allGradesArray);
     });
-    console.log('allGradesArray2:', allGradesArray);
     const gradesTotal = allGradesArray.reduce((a, b) => {
       return a + b;
     }, 0);
     const gradesAverage = Math.floor(gradesTotal / allGradesArray.length);
-    console.log('allGradesArray3:', allGradesArray);
     return gradesAverage;
 
   }
