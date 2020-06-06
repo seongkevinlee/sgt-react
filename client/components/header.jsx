@@ -5,8 +5,8 @@ function Header(props) {
   const averageGrade = props.averageGrade;
   console.log('Header averageGrade:', averageGrade);
   return (
-    <div className='container col-12'>
-      <div className='title'>
+    <div className='container col-12 d-inline-flex'>
+      <div className='title col-11'>
         <h1>Student Grade Table</h1>
       </div>
       <div>
