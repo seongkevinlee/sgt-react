@@ -32,7 +32,7 @@ class App extends React.Component {
     return (
       <div className='container col-12'>
         <Header/>
-        <GradeTable/>
+        <GradeTable grades={this.state.grades}/>
       </div>
     );
   }
