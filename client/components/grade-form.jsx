@@ -61,7 +61,7 @@ export default class GradeForm extends React.Component {
                 <i className='fas fa-user'></i>
               </span>
             </div>
-            <input required type='text' id='name-input' className='form-control' placeholder='Name' value={this.state.name} onChange={this.handleChange}/>
+            <input required type='text' id='name-input' className='form-control' placeholder='Student Name' value={this.state.name} onChange={this.handleChange}/>
           </div>
 
           <div className='form-row input-group flex-nowrap'>
@@ -79,7 +79,7 @@ export default class GradeForm extends React.Component {
                 <i className='fas fa-graduation-cap'></i>
               </span>
             </div>
-            <input required min='1' max='100' type='number' id='grade-input' className='form-control' placeholder='Grade (1-100)' value={this.state.grade} onChange={this.handleChange}/>
+            <input required type='number' id='grade-input' className='form-control' placeholder='Grade' value={this.state.grade} onChange={this.handleChange}/>
           </div>
 
           <div className="form-row d-inline-flex justify-content-start">
