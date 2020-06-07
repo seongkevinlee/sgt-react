@@ -62,7 +62,7 @@ class App extends React.Component {
     return (
       <div className='container col-12'>
         <Header averageGrade={this.getAverageGrade()}/>
-        <div className='container col-8 d-inline-flex'>
+        <div className='container col-12 d-inline-flex'>
           <GradeTable grades={this.state.grades}/>
           <GradeForm onSubmit={this.addNewGrade}/>
         </div>

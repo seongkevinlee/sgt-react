@@ -10,7 +10,7 @@ function Header(props) {
       <div className='average-grade d-flex justify-content-end col-4'>
         <h4>Average Grade:&nbsp;
           <span className='badge badge-info'>
-            {!averageGrade ? '##' : averageGrade}
+            {!averageGrade ? 'N/A' : averageGrade}
           </span>
         </h4>
       </div>
