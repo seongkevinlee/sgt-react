@@ -17,6 +17,12 @@
       "name": "Douglas Crockford",
       "course": "JavaScript",
       "grade": 85
+    },
+    {
+      "name": "Professor Farnsworth",
+      "course": "Science",
+      "grade": "100",
+      "id": 33
     }
   ]
 }

@@ -9,6 +9,8 @@ class App extends React.Component {
     this.state = {
       grades: []
     };
+
+    this.addNewGrade = this.addNewGrade.bind(this);
   }
 
   componentDidMount() {
@@ -30,7 +32,7 @@ class App extends React.Component {
     const allGrades = this.state.grades;
     const allGradesArray = [];
     allGrades.forEach(gradeRow => {
-      allGradesArray.push(gradeRow.grade);
+      allGradesArray.push(parseInt(gradeRow.grade));
     });
     const gradesTotal = allGradesArray.reduce((a, b) => {
       return a + b;
@@ -62,7 +64,7 @@ class App extends React.Component {
         <Header averageGrade={this.getAverageGrade()}/>
         <div className='container col-8 d-inline-flex'>
           <GradeTable grades={this.state.grades}/>
-          <GradeForm/>
+          <GradeForm onSubmit={this.addNewGrade}/>
         </div>
       </div>
     );
