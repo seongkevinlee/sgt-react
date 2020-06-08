@@ -3,8 +3,20 @@
     {
       "name": "john",
       "course": "english",
-      "grade": "85",
+      "grade": "54",
       "id": 1
+    },
+    {
+      "name": "helen",
+      "course": "magic",
+      "grade": "25",
+      "id": 2
+    },
+    {
+      "name": "helen",
+      "course": "magic",
+      "grade": "25",
+      "id": 3
     }
   ]
 }
