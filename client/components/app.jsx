@@ -90,7 +90,9 @@ class App extends React.Component {
       <div className='container col-12'>
         <Header averageGrade={this.getAverageGrade()}/>
         <div className='container col-12 d-inline-flex'>
-          <GradeTable grades={this.state.grades}/>
+          <GradeTable
+            grades={this.state.grades}
+            deleteGrade={this.deleteGrade}/>
           <GradeForm onSubmit={this.addNewGrade}/>
         </div>
       </div>
