@@ -17,6 +17,18 @@
       "name": "Douglas Crockford",
       "course": "JavaScript",
       "grade": 85
+    },
+    {
+      "name": "Professor Farnsworth",
+      "course": "Science",
+      "grade": "100",
+      "id": 33
+    },
+    {
+      "name": "Al Bundy",
+      "course": "Sales",
+      "grade": "70",
+      "id": 34
     }
   ]
 }
