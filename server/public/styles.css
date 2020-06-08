@@ -1,3 +1,11 @@
-button {
+.add-btn, .cancel-btn {
   margin-top: 10px;
+}
+.table-header {
+  padding: 0;
+  width: 100%;
+}
+
+.table-row1 {
+  padding: 0;
 }
