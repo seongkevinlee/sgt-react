@@ -5,18 +5,57 @@ export default class GradeTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      empty: false
+      numberOfGrades: 0,
+      emptyTableClass: 'd-none'
     };
     this.renderGradeRows = this.renderGradeRows.bind(this);
+    this.handleEmpty = this.handleEmpty.bind(this);
+    this.countNumberOfGrades = this.countNumberOfGrades.bind(this);
   }
 
   renderGradeRows(props) {
     const grades = this.props.grades;
     const deleteGrade = this.props.deleteGrade;
     const gradeRows = grades.map(grade => {
-      return <Grade key={grade.id} grade={grade} deleteGrade={deleteGrade}/>;
+      return <Grade
+        key={grade.id}
+        grade={grade}
+        deleteGrade={deleteGrade}/>;
     });
     return gradeRows;
+  }
+
+  componentDidMount() {
+    this.handleEmpty();
+    // console.log('this.props:', this.props);
+    // this.countNumberOfGrades();
+    // console.log('props.grades.length', this.props.grade.length);
+  }
+
+  countNumberOfGrades() {
+    const gradeCount = this.props.grades.length;
+    this.setState({
+      numberOfGrades: gradeCount
+    });
+    // console.log('gradeNumber:', gradeCount);
+    // console.log('this.props:', this.props);
+  }
+
+  handleEmpty() {
+    this.countNumberOfGrades();
+    // const numberOfGrades = this.state.numberOfGrades;
+    // console.log('numberOfGrades:', numberOfGrades);
+    // console.log('props:', this.props);
+    // console.log('this.props.grades.length', this.props.grades.length);
+    if (this.props.grades.length < 1) {
+      this.setState({
+        emptyTableClass: 'visible'
+      });
+    } else {
+      this.setState({
+        emptyTableClass: 'd-none'
+      });
+    }
   }
 
   render() {
@@ -32,6 +71,9 @@ export default class GradeTable extends React.Component {
             </tr>
           </thead>
           <tbody>
+            <tr className={this.state.emptyTableClass}>
+              <td>No Grades Recorded</td>
+            </tr>
             {this.renderGradeRows()}
           </tbody>
         </table>
