@@ -83,8 +83,8 @@ export default class GradeForm extends React.Component {
           </div>
 
           <div className="form-row d-inline-flex justify-content-start">
-            <button type='submit' className='btn btn-success'>Add</button>
-            <button type='reset' className='btn btn-secondary'>Cancel</button>
+            <button type='submit' className='add-btn btn btn-success'>Add</button>
+            <button type='reset' className='cancel-btn btn btn-secondary'>Cancel</button>
           </div>
         </form>
       </div>
