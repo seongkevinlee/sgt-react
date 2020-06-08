@@ -32,7 +32,7 @@ export default class GradeTable extends React.Component {
   render() {
     return (
       <div className='container col-8'>
-        <table className='table table-striped'>
+        <table className='table'>
           <thead className='table-header thead-dark'>
             <tr className='table-row1 d-flex col-12'>
               <th className='col-4'>Student Name</th>
