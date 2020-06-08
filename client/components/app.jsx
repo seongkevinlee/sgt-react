@@ -11,6 +11,7 @@ class App extends React.Component {
     };
 
     this.addNewGrade = this.addNewGrade.bind(this);
+    this.deleteGrade = this.deleteGrade.bind(this);
   }
 
   componentDidMount() {
@@ -54,6 +55,32 @@ class App extends React.Component {
         this.setState({
           grades: this.state.grades.concat(grade)
         });
+      })
+      .catch(err => console.error(err));
+  }
+
+  deleteGrade(gradeId) {
+    const gradeIndex = this.state.grades.findIndex(grade => gradeId === grade.id);
+    // const gradeClicked = this.state.grades[gradeIndex].grade;
+    // const gradeCompleted = {
+    //   course: this.state.gradeClicked.grade.course,
+    //   grade: this.state.gradeClicked.grade.grade,
+    //   id: this.state.gradeClicked.grade.id,
+    //   name: this.state.gradeClicked.grade.name
+    // };
+
+    fetch(`api/grades/${gradeId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: {}
+    })
+      .then(response => response.json())
+      .then(data => {
+        const newGradeList = [...this.state.grades];
+        newGradeList.splice(gradeIndex, 1, data);
+        this.setState({ grades: newGradeList });
       })
       .catch(err => console.error(err));
   }
