@@ -38,7 +38,7 @@ export default class GradeTable extends React.Component {
               <th className='col-4'>Student Name</th>
               <th className='col-4'>Course</th>
               <th className='col-2 text-center'>Grade</th>
-              <th className='col-2 text-center'>Operation</th>
+              <th className='col-3 text-center'>Operation</th>
             </tr>
           </thead>
           <tbody>

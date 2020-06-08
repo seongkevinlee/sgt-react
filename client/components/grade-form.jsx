@@ -53,7 +53,7 @@ export default class GradeForm extends React.Component {
 
   render() {
     return (
-      <div className='container col-4'>
+      <div className='container col-3'>
         <form onSubmit={this.handleSubmit} onReset={this.handleCancel}>
           <div className='form-row input-group flex-nowrap'>
             <div className='input-group-prepend'>
