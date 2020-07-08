@@ -30,7 +30,7 @@ Try the application live at [[http://seongkevinlee.com](http://seongkevinlee.com
 * Node.js 10 or higher
 * NPM 6 or higher
 
-## Getting Started
+### Getting Started
 1. Clone the respository
 ```
 git clone https://github.com/seongkevinlee/sgt-react.git
