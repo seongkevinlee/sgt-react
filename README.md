@@ -1,4 +1,5 @@
 # sgt-react
+A full-stack student grade table application made using React and Node.js
 
 
 ## Live Demo
